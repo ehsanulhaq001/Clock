@@ -19,7 +19,7 @@ function draw() {
     seconds = date.getSeconds();
     secAng = seconds * 6 * Math.PI / 180;
     minAng = minutes * 6 * Math.PI / 180;
-    houAng = hours * 6 * Math.PI / 180;
+    houAng = (hours%12) * 30 * Math.PI / 180;
 
     ctx.clearRect(0, 0, cnv.width, cnv.height);
     ctx.beginPath();
