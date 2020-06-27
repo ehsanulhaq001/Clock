@@ -1,7 +1,7 @@
 let date, hours, minutes, seconds;
 window.onload = function() {
     setup();
-    setInterval(draw, 1000 / 2);
+    setInterval(draw, 1000 / 10);
 }
 
 function setup() {
