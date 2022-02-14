@@ -1,4 +1,5 @@
 let date, hours, minutes, seconds;
+let text = true;
 window.onload = function () {
   setup();
   setInterval(draw, 1000 / 10);
@@ -10,6 +11,9 @@ function setup() {
   cnv.height = 800;
   cnv.style.backgroundColor = "black";
   ctx = cnv.getContext("2d");
+  cnv.addEventListener("click", () => {
+    text = !text;
+  });
 }
 
 function draw() {
@@ -151,6 +155,8 @@ function draw() {
   ctx.arc(cnv.width / 2, cnv.height / 2, 3, 0, 2 * Math.PI, true);
   ctx.fillStyle = "rgb(255, 100 ,150)";
   ctx.fill();
+
+  if (!text) return;
 
   ctx.beginPath();
   ctx.font = "50px Chalkboard";
